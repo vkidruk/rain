@@ -1,0 +1,54 @@
+The Rain project
+================
+
+Easy way to test
+
+java -jar rain.jar -g -o input.txt
+java -jar rain.jar -i input.txt -o output.txt
+
+
+The problem description
+-----------------------
+
+Consider the following picture:
+
+7             ####
+6             ######
+5   ##        ######
+4   ##      ########
+3   ##    ##########
+2 ####  ############
+1 ##################
+   0 1 2 3 4 5 6 7 8
+
+
+In this picture we have walls of different heights.
+This picture is represented by an array of integers,
+where the value at each index is the height of the wall.
+The picture above is represented with an array as [2,5,1,2,3,4,7,7,6].
+
+So, first input parameter is array of Integer,
+where array length is the quantity of walls
+and the value at each index is the height of the wall.
+
+Now imagine it rains.
+The second input parameter is range of indexes where it rains.
+On the picture below values are [0, 8].
+
+How much water is going to be accumulated in puddles between walls?
+
+For example:
+
+7             ####
+6             ######
+5   ##~~~~~~~~######
+4   ##~~~~~~########
+3   ##~~~~##########
+2 ####~~############
+1 ##################
+   0 1 2 3 4 5 6 7 8
+
+We count volume in square blocks of 1X1.
+So in the picture above, everything to the left of index 1 spills out.
+Water to the right of index 7 also spills out.
+We are left with a puddle between 1 and 6 and the volume is 10.
