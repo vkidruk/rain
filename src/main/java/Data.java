@@ -1,4 +1,4 @@
-package rain;
+package main.java;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -23,7 +23,7 @@ public class Data {
     private Core core = new Core();
 
     /**
-     * To read incoming data from file
+     * To read incoming data from file and processing
      * 
      * Using file format (example):
      * 
@@ -38,7 +38,9 @@ public class Data {
      * 3 7                  <- rain range indexes (case #2)
      * 
      */
-    public void read() throws Exception {
+    public void process() throws Exception {
+    	
+    	//open input/output file
         try {
             scanner = new Scanner(new File(inFile));
             if (outFile != null && !outFile.isEmpty()) {
@@ -48,6 +50,7 @@ public class Data {
             throw e;
         }
 
+        // read test cases count
         int testCount = 0;
         if (scanner.hasNextInt()) {
             testCount = scanner.nextInt();
@@ -74,16 +77,17 @@ public class Data {
                 }
             }
 
-            // processing
+            // solving
             int result = core.solve(walls, rainRange);
 
             // output result
             System.out.println("#" + t + ": " + result);
 
             // output debug
-            write(t, result, walls, rainRange);
+            outputDebug(t, result, walls, rainRange);
         }
 
+    	//close input/output file
         if(writer != null) {
             writer.close();
         }
@@ -102,7 +106,7 @@ public class Data {
      *                           and the value at each index is the height of the wall
      * @param  int[] rainRange - range of indexes where it rains
      */
-    private void write(int caseNum, int result, int[] walls, int[] rainRange) {
+    private void outputDebug(int caseNum, int result, int[] walls, int[] rainRange) {
 
         int[] water = core.getWater();
         if (writer == null) {

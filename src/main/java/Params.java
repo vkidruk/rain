@@ -1,4 +1,4 @@
-package rain;
+package main.java;
 
 /**
  * @author Valentyn Kidruk

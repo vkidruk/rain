@@ -1,4 +1,4 @@
-package rain;
+package main.java;
 
 public enum Direction {
     LEFT(-1), RIGHT(1);

@@ -1,4 +1,4 @@
-package rain;
+package main.java;
 
 /**
  * @author Valentyn Kidruk
@@ -23,7 +23,7 @@ public class Rain {
             if (params.isGenerate()) {
                 data.generate();
             } else {
-                data.read();
+                data.process();
             }
         }
         catch(Exception e) {

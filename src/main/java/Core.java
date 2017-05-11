@@ -1,25 +1,18 @@
-package rain;
+package main.java;
 
 /**
  * @author Valentyn Kidruk
  */
-public class Core {
+public class Core implements ICore{
 
     /**
-     * To solve the Rain problem method
-     * <p>
-     * 
      * The algorithm short description:
      * 1. Fill water inside rain range
      * 2. If during that ground found then stop and exit
      * 3. Find nearest bigger wall and extend rainRange
      * 4. Repeat from step 1
-     *
-     * @param  int[] walls     - set of walls, where array length is the quantity of walls
-     *                           and the value at each index is the height of the wall
-     * @param  int[] rainRange - range of indexes where it rains
-     * @return int quantity    - Quantity of water accumulated in puddles between walls
      */
+	@Override
     public int solve(int[] walls, int[] rainRange) {
 
         water = new int[walls.length];

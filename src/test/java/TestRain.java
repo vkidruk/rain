@@ -1,8 +1,8 @@
-package rain;
+package test.java;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
+import main.java.Core;
 
 public class TestRain {
 
