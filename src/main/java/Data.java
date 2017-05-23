@@ -172,7 +172,7 @@ public class Data {
         }
 
         int testCount = 1000;
-        int wallCount = 100;
+        int wallCount = 40;
         int start, stop;
 
         Random rand = new Random();
